@@ -1,14 +1,19 @@
 import pyautogui as py
-from time import perf_counter as pf
+import threading
 
-code_start = pf()
-range1 = 100
-cont = 940
-for i in range(104):
-    new = py.locateOnScreen('checkbox.png', confidence=0.9,region=(cont,200,80,900))
-    py.click(new)
-    new = None
-    cont += 2
 
-print(f'Code ended in {code_start} seconds')
+def Box_Clicker():
+    global cont
+    for i in range(104):
+        new = py.locateOnScreen('checkbox.png',confidence=0.9,region=(cont,200,80,900))
+        py.click(new)
+        cont += 2
+
+def main():
+    cont = 940
+    t3 = threading.Thread(target=Box_Clicker)
+    t3.start()
+    #Box_Clicker()
+
+main()
 
