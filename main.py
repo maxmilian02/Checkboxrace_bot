@@ -1,6 +1,7 @@
 import pyautogui as py
 import threading
 
+cont = 940
 
 def Box_Clicker():
     global cont
@@ -10,7 +11,6 @@ def Box_Clicker():
         cont += 2
 
 def main():
-    cont = 940
     t3 = threading.Thread(target=Box_Clicker)
     t3.start()
     #Box_Clicker()
