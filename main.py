@@ -5,7 +5,7 @@ cont = 940
 
 def Box_Clicker():
     global cont
-    for i in range(104):
+    for _ in range(104):
         new = py.locateOnScreen('checkbox.png',confidence=0.9,region=(cont,200,80,900))
         py.click(new)
         cont += 2
